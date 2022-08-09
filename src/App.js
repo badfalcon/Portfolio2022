@@ -7,18 +7,21 @@ import Top from "./Pages/Top";
 import Works from "./Pages/Works";
 import Contact from "./Pages/Contact";
 import Page404 from "./Pages/Page404";
+import Language from "./Components/Language";
+import { Suspense } from 'react';
 
 function App() {
   return (
       <div className="App">
         <BrowserRouter>
+          <Language/>
           <Menu/>
           <Routes>
-            <Route path={"/"} element={<Top />} />
-            <Route path={"/about"} element={<About />} />
-            <Route path={"/works"} element={<Works />} />
-            <Route path={"/contact"} element={<Contact />} />
-            <Route path={"/*/"} element={<Page404 />} />
+            <Route path={"/"} element={<Top/>}/>
+            <Route path={"/about"} element={<About/>}/>
+            <Route path={"/works"} element={<Works/>}/>
+            <Route path={"/contact"} element={<Contact/>}/>
+            <Route path={"/*/"} element={<Page404/>}/>
           </Routes>
           <img src={logo} className="App-logo" alt="logo"/>
           <p>
@@ -36,4 +39,10 @@ function App() {
       </div>);
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+      <Suspense fallback={"...is loading"}>
+        <App />
+      </Suspense>
+  );
+}

@@ -7,7 +7,7 @@ export const Menu = () => {
     <nav>
       <ul>
         <li>
-          <NavLink exact activeClassName="active" to={"/"}>Home</NavLink>
+          <NavLink activeClassName="active" to={"/"}>Home</NavLink>
         </li>
         <li>
           <NavLink activeClassName="active" to={"/about"}>About</NavLink>
