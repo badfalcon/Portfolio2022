@@ -9,12 +9,19 @@ import Contact from "./Pages/Contact";
 import Page404 from "./Pages/Page404";
 import Language from "./Components/Language";
 import { Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function App() {
+  const { i18n } = useTranslation();
+
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
       <div className="App">
         <BrowserRouter>
-          <Language/>
+          <Language click={(lang) => changeLanguage(lang)}/>
           <Menu/>
           <Routes>
             <Route path={"/"} element={<Top/>}/>
