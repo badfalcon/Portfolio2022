@@ -14,14 +14,10 @@ import { useTranslation } from 'react-i18next';
 function App() {
   const { i18n } = useTranslation();
 
-  const changeLanguage = lng => {
-    i18n.changeLanguage(lng);
-  };
-
   return (
       <div className="App">
         <BrowserRouter>
-          <Language click={(lang) => changeLanguage(lang)}/>
+          <Language click={(lng) => i18n.changeLanguage(lng)}/>
           <Menu/>
           <Routes>
             <Route path={"/"} element={<Top/>}/>
