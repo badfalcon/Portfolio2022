@@ -1,5 +1,19 @@
 {
   "about": {
-    "desc": "自己紹介"
+    "desc": "自己紹介",
+    "head" : {
+      "name" :  "氏名",
+      "nickname" :  "ハンドルネーム",
+      "born" :  "生まれ",
+      "upbringing" :  "育ち",
+      "hobby" : "趣味"
+    },
+    "body" : {
+      "name" :  "増田 淳",
+      "nickname" :  "badfalcon",
+      "born" :  "静岡県",
+      "upbringing" :  "生まれは日本だが、アメリカ,マレーシアと海外で育つ。<br>日本語と英語のバイリンガル。",
+      "hobby" : "ゲーム/謎解き/プログラミング"
+    }
   }
 }

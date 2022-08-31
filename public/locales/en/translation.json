@@ -1,5 +1,19 @@
 {
   "about": {
-    "desc": "self introduction"
+    "desc": "self introduction",
+    "head" : {
+      "name" :  "name",
+      "nickname" :  "nickname",
+      "born" :  "born",
+      "upbringing" :  "upbringing",
+      "hobby" : "hobby"
+    },
+    "body" : {
+      "name" :  "Jun Masuda",
+      "nickname" :  "badfalcon",
+      "born" :  "Shizuoka Japan",
+      "upbringing" :  "Born in Japan,Grown up at America and Malaysia.<br>Bilingual of English and Japanese.",
+      "hobby" : "game/riddle solving/programming"
+    }
   }
 }

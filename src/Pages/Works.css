@@ -1,0 +1,8 @@
+.WorkBoxParent{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.WorkBox{
+  flex-basis: 50%;
+}
