@@ -1,24 +1,33 @@
-import {NavLink} from "react-router-dom";
+import {matchPath, NavLink, useLocation} from "react-router-dom";
 import "./Menu.css"
+import {Tab, Tabs} from "@mui/material";
+
+
+export const useRouteMatch = (patterns) => {
+  const { pathname } = useLocation();
+
+  for (let i = 0; i < patterns.length; i += 1) {
+    const pattern = patterns[i];
+    const possibleMatch = matchPath(pattern, pathname);
+    if (possibleMatch !== null) {
+      return possibleMatch;
+    }
+  }
+
+  return null;
+}
 
 export const Menu = () => {
-
+  const routeMatch = useRouteMatch(['/', '/about', '/works', '/contact']);
+  const currentTab = routeMatch?.pattern?.path;
   return <header>
     <nav>
-      <ul>
-        <li>
-          <NavLink activeClassName="active" to={"/"}>Home</NavLink>
-        </li>
-        <li>
-          <NavLink activeClassName="active" to={"/about"}>About</NavLink>
-        </li>
-        <li>
-          <NavLink activeClassName="active" to={"/works"}>Works</NavLink>
-        </li>
-        <li>
-          <NavLink activeClassName="active" to={"/contact"}>Contact</NavLink>
-        </li>
-      </ul>
+      <Tabs value={currentTab} aria-label="nav tabs" centered>
+        <Tab label="Home" value="/" to={"/"} component={NavLink} />
+        <Tab label="About" value="/about"  to={"/about"} component={NavLink} />
+        <Tab label="Works" value="/works"  to={"/works"} component={NavLink} />
+        <Tab label="Contact" value="/contact"  to={"/contact"} component={NavLink} />
+      </Tabs>
     </nav>
   </header>;
 }
