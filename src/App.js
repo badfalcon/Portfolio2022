@@ -9,12 +9,13 @@ import Page404 from "./Pages/Page404";
 import Language from "./Components/Language";
 import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
+import {Container} from "@mui/material";
 
 function App() {
   const { i18n } = useTranslation();
 
   return (
-      <div className="App">
+      <Container className="App">
         <BrowserRouter>
           <Menu/>
           <Routes>
@@ -26,7 +27,7 @@ function App() {
           </Routes>
           <Language/>
         </BrowserRouter>
-      </div>);
+      </Container>);
 }
 
 export default function WrappedApp() {

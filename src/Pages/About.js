@@ -1,8 +1,9 @@
 import {Trans} from 'react-i18next';
 import './About.css';
+import {Container} from "@mui/material";
 
 export const About = () => {
-  return <div>
+  return <Container>
     <h1>About</h1>
     <Trans i18nKey={"about.desc"}>self description!!</Trans>
     <table>
@@ -29,7 +30,7 @@ export const About = () => {
       </tr>
       </tbody>
     </table>
-  </div>
+  </Container>
 }
 
 export default About;

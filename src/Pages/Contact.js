@@ -1,5 +1,11 @@
+import {Container} from "@mui/material";
+
 export const Contact = () => {
-  return <h1>Contact</h1>
+  return (
+      <Container>
+        <h1>Contact</h1>
+      </Container>
+  )
 }
 
 export default Contact;
