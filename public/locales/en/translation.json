@@ -19,5 +19,11 @@
       "upbringing" :  "Born in Japan,Grown up at America and Malaysia.<br>Bilingual of English and Japanese.",
       "hobby" : "game/riddle solving/programming"
     }
+  },
+  "contact" : {
+    "label_address" : "Email",
+    "label_name" : "Name",
+    "label_message" : "Message",
+    "message_sent" : "送信が完了しました。"
   }
 }

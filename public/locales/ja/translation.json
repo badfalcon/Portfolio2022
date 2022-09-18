@@ -16,8 +16,14 @@
       "name" :  "増田 淳",
       "nickname" :  "badfalcon",
       "born" :  "静岡県",
-      "upbringing" :  "生まれは日本だが、アメリカ,マレーシアと海外で育つ。<br>日本語と英語のバイリンガル。",
+      "upbringing" :  "生まれは日本、アメリカ,マレーシアと海外で育つ。<br>日本語と英語のバイリンガル。",
       "hobby" : "ゲーム/謎解き/プログラミング"
     }
+  },
+  "contact" : {
+    "label_address" : "メールアドレス",
+    "label_name" : "お名前",
+    "label_message" : "メッセージ",
+    "message_sent" : "送信が完了しました。"
   }
 }
