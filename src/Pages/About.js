@@ -49,38 +49,6 @@ export const About = () => {
         <Trans i18nKey={"about.body.hobby"}/>
       </Typography>
     </Box>
-    <Box>
-      <table>
-        <thead>
-        <tr>
-          <th colSpan="2">
-          </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th></th>
-          <td><Trans i18nKey={"about.body.name"}/></td>
-        </tr>
-        <tr>
-          <th><Trans i18nKey={"about.head.nickname"}/></th>
-          <td><Trans i18nKey={"about.body.nickname"}/></td>
-        </tr>
-        <tr>
-          <th><Trans i18nKey={"about.head.born"}/></th>
-          <td><Trans i18nKey={"about.body.born"}/></td>
-        </tr>
-        <tr>
-          <th><Trans i18nKey={"about.head.upbringing"}/></th>
-          <td><Trans i18nKey={"about.body.upbringing"}/></td>
-        </tr>
-        <tr>
-          <th><Trans i18nKey={"about.head.hobby"}/></th>
-          <td><Trans i18nKey={"about.body.hobby"}/></td>
-        </tr>
-        </tbody>
-      </table>
-    </Box>
   </Container>
 }
 
