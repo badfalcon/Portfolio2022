@@ -1,4 +1,8 @@
 {
+  "home": {
+    "greetings": "やぁ",
+    "desc": "ここはbadfalconの個人のサイトです。"
+  },
   "about": {
     "desc": "自己紹介",
     "head" : {

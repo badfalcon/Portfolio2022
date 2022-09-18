@@ -1,10 +1,16 @@
-import {Container} from "@mui/material";
+import {Box, Container, Typography} from "@mui/material";
+import {Trans} from "react-i18next";
 
 export const Home = () => {
   return <Container>
-    <h1>Home</h1>
-    hi there!
-    This is badfalcon's portfolio site.
+    <Box sx={{pt:20}}>
+      <Typography align='center' variant='h1' sx={{py:5}}>
+        <Trans i18nKey={"home.greetings"}>Hi there!</Trans>
+      </Typography>
+      <Typography align='center' variant='h3'>
+        <Trans i18nKey={"home.desc"}>This is badfalcon`s personal website.</Trans>
+      </Typography>
+    </Box>
   </Container>
 }
 

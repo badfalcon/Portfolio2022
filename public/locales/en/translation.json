@@ -1,4 +1,8 @@
 {
+  "home": {
+    "greetings": "Hi there!",
+    "desc": "This is badfalcon`s personal website."
+  },
   "about": {
     "desc": "self introduction",
     "head" : {
