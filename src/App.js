@@ -12,6 +12,8 @@ import { useTranslation } from 'react-i18next';
 import {Container} from "@mui/material";
 
 function App() {
+  // todo check why do I need this?
+  // eslint-disable-next-line
   const { i18n } = useTranslation();
 
   return (

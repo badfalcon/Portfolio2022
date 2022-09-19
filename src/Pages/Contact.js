@@ -8,11 +8,12 @@ import {
 } from "@mui/material";
 import emailjs from "@emailjs/browser";
 import {useRef, useState} from "react";
-import {Trans, useTranslation} from "react-i18next";
+import {useTranslation} from "react-i18next";
 import SendIcon from '@mui/icons-material/Send';
 
 export const Contact = () => {
   const form = useRef();
+  // eslint-disable-next-line
   const { t, i18n } = useTranslation();
   const inputRef = useRef(null);
   const [inputError, setInputError] = useState(false);
