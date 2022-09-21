@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Container,
   Stack,
@@ -7,7 +8,7 @@ import {
 } from "@mui/material";
 import emailjs from "@emailjs/browser";
 import {useRef, useState} from "react";
-import {useTranslation} from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
 import SendIcon from '@mui/icons-material/Send';
 
 export const Contact = () => {
@@ -44,6 +45,11 @@ export const Contact = () => {
 
   return (
       <Container sx={{pt:10}}>
+        <Box sx={{pb:5}}>
+          <Typography align='center' variant="h3">
+            <Trans i18nKey={"contact.title"}>Contact</Trans>
+          </Typography>
+        </Box>
         {!mailSent ?
             <form ref={form} onSubmit={sendEmail}>
               <Stack spacing={3}>

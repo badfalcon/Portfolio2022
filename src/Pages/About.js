@@ -6,7 +6,7 @@ export const About = () => {
   return <Container sx={{pt:10}}>
     <Box sx={{pb:5}}>
       <Typography align='center' variant="h3">
-        <Trans i18nKey={"about.desc"}>self description!!</Trans>
+        <Trans i18nKey={"about.title"}>About</Trans>
       </Typography>
     </Box>
     <Grid

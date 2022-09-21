@@ -4,7 +4,7 @@
     "desc": "ここはbadfalconの個人のサイトです。"
   },
   "about": {
-    "desc": "自己紹介",
+    "title": "自己紹介",
     "head" : {
       "name" :  "氏名",
       "nickname" :  "ハンドルネーム",
@@ -20,7 +20,11 @@
       "hobby" : "ゲーム/謎解き/プログラミング"
     }
   },
+  "works": {
+    "title": "成果物"
+  },
   "contact" : {
+    "title": "連絡先",
     "label_address" : "メールアドレス",
     "label_name" : "お名前",
     "label_message" : "メッセージ",

@@ -1,11 +1,13 @@
 import './Works.css';
 import {
+  Box,
   Card,
   CardActionArea,
   CardContent,
   CardMedia, Container,
   Grid, Typography
 } from "@mui/material";
+import {Trans} from "react-i18next";
 
 export const Works = () => {
   const works = [
@@ -16,6 +18,11 @@ export const Works = () => {
     {title:"Old Personal Website", desc:"JavaScript", src:`${process.env.PUBLIC_URL}/images/old_website.png`},
   ]
   return <Container sx={{pt:10}}>
+    <Box sx={{pb:5}}>
+      <Typography align='center' variant="h3">
+        <Trans i18nKey={"works.title"}>Works</Trans>
+      </Typography>
+    </Box>
     <Grid
         container
         spacing={2}
