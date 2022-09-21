@@ -1,6 +1,5 @@
 import './Works.css';
 import {
-  Box,
   Card,
   CardActionArea,
   CardContent,
@@ -16,9 +15,7 @@ export const Works = () => {
     {title:"ImageDrawer", desc:"Chrome Ext", src:`${process.env.PUBLIC_URL}/images/image_drawer.jpg`},
     {title:"Old Personal Website", desc:"JavaScript", src:`${process.env.PUBLIC_URL}/images/old_website.png`},
   ]
-  return <Container>
-    <Box sx={{pt:10}}>
-    </Box>
+  return <Container sx={{pt:10}}>
     <Grid
         container
         spacing={2}

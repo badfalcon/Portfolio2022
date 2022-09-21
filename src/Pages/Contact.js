@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Container,
   Stack,
@@ -44,33 +43,31 @@ export const Contact = () => {
   };
 
   return (
-      <Container>
-        <Box sx={{pt:10}}>
-          {!mailSent ?
-              <form ref={form} onSubmit={sendEmail}>
-                <Stack spacing={3}>
-                  <TextField name="user_email" onChange={checkAddress} required
-                             inputRef={inputRef}
-                             helperText={inputRef?.current?.validationMessage}
-                             label={t('contact.label_address')} type="email"
-                             error={inputError}/>
-                  <TextField name="user_name" required
-                             label={t('contact.label_name')}/>
-                  <TextField name={"message"} required
-                             label={t('contact.label_message')} multiline
-                             rows={4}/>
-                  <Button variant="contained" endIcon={<SendIcon/>}
-                          type={"submit"}>
-                    Send
-                  </Button>
-                </Stack>
-              </form>
-              :
-              <Typography align='center' variant='h6'>
-                {t('contact.message_sent')}
-              </Typography>
-          }
-        </Box>
+      <Container sx={{pt:10}}>
+        {!mailSent ?
+            <form ref={form} onSubmit={sendEmail}>
+              <Stack spacing={3}>
+                <TextField name="user_email" onChange={checkAddress} required
+                           inputRef={inputRef}
+                           helperText={inputRef?.current?.validationMessage}
+                           label={t('contact.label_address')} type="email"
+                           error={inputError}/>
+                <TextField name="user_name" required
+                           label={t('contact.label_name')}/>
+                <TextField name={"message"} required
+                           label={t('contact.label_message')} multiline
+                           rows={4}/>
+                <Button variant="contained" endIcon={<SendIcon/>}
+                        type={"submit"}>
+                  Send
+                </Button>
+              </Stack>
+            </form>
+            :
+            <Typography align='center' variant='h6'>
+              {t('contact.message_sent')}
+            </Typography>
+        }
       </Container>
   )
 }

@@ -2,8 +2,8 @@ import {Box, Container, Typography} from "@mui/material";
 import {Trans} from "react-i18next";
 
 export const Home = () => {
-  return <Container>
-    <Box sx={{pt:20}}>
+  return <Container sx={{pt:10}}>
+    <Box sx={{pt:10}}>
       <Typography align='center' variant='h1' sx={{py:5}}>
         <Trans i18nKey={"home.greetings"}>Hi there!</Trans>
       </Typography>

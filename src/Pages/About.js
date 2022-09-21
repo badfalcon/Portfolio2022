@@ -3,8 +3,8 @@ import './About.css';
 import {Box, Container, Typography} from "@mui/material";
 
 export const About = () => {
-  return <Container>
-    <Box sx={{pt:10}}>
+  return <Container sx={{pt:10}}>
+    <Box sx={{pb:5}}>
       <Typography align='center' variant="h3">
         <Trans i18nKey={"about.desc"}>self description!!</Trans>
       </Typography>
