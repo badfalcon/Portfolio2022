@@ -1,4 +1,3 @@
-import './Works.css';
 import {
   Box,
   Card,

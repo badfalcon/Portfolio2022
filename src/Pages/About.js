@@ -1,5 +1,4 @@
 import {Trans} from 'react-i18next';
-import './About.css';
 import {Avatar, Box, Container, Grid, Typography} from "@mui/material";
 
 export const About = () => {
