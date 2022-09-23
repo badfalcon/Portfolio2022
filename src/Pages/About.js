@@ -3,7 +3,7 @@ import './About.css';
 import {Avatar, Box, Container, Grid, Typography} from "@mui/material";
 
 export const About = () => {
-  return <Container sx={{pt:10}}>
+  return <Container>
     <Box sx={{pb:5}}>
       <Typography align='center' variant="h3">
         <Trans i18nKey={"about.title"}>About</Trans>

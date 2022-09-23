@@ -8,7 +8,8 @@ import Contact from "./Pages/Contact";
 import Page404 from "./Pages/Page404";
 import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
-import {Container} from "@mui/material";
+import {Box, Container} from "@mui/material";
+import Footer from "./Components/Footer";
 
 function App() {
   // todo check why do I need this?
@@ -16,16 +17,19 @@ function App() {
   const { i18n } = useTranslation();
 
   return (
-      <Container className="App">
+      <Container className="App" sx={{pb:10}}>
         <BrowserRouter>
           <Menu/>
-          <Routes>
-            <Route path={"/"} element={<Home/>}/>
-            <Route path={"/about"} element={<About/>}/>
-            <Route path={"/works"} element={<Works/>}/>
-            <Route path={"/contact"} element={<Contact/>}/>
-            <Route path={"/*/"} element={<Page404/>}/>
-          </Routes>
+          <Box sx={{py:10}}>
+            <Routes>
+              <Route path={"/"} element={<Home/>}/>
+              <Route path={"/about"} element={<About/>}/>
+              <Route path={"/works"} element={<Works/>}/>
+              <Route path={"/contact"} element={<Contact/>}/>
+              <Route path={"/*/"} element={<Page404/>}/>
+            </Routes>
+          </Box>
+          <Footer/>
         </BrowserRouter>
       </Container>);
 }

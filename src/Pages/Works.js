@@ -17,7 +17,7 @@ export const Works = () => {
     {key:3, title:"ImageDrawer", desc:"Chrome Ext", src:`${process.env.PUBLIC_URL}/images/image_drawer.jpg`},
     {key:4, title:"Old Personal Website", desc:"JavaScript", src:`${process.env.PUBLIC_URL}/images/old_website.png`},
   ]
-  return <Container sx={{pt:10}}>
+  return <Container>
     <Box sx={{pb:5}}>
       <Typography align='center' variant="h3">
         <Trans i18nKey={"works.title"}>Works</Trans>

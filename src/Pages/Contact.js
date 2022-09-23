@@ -44,7 +44,7 @@ export const Contact = () => {
   };
 
   return (
-      <Container sx={{pt:10}}>
+      <Container>
         <Box sx={{pb:5}}>
           <Typography align='center' variant="h3">
             <Trans i18nKey={"contact.title"}>Contact</Trans>
