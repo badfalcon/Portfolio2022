@@ -53,8 +53,6 @@ export const Works = () => {
           </Grid>
       ))}
     </Grid>
-    <div className={'WorkBoxParent'} style={{display:'flex',flexWrap:"wrap"}}>
-    </div>
   </Container>
 }
 
