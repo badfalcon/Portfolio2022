@@ -1,4 +1,3 @@
-import './App.css';
 import Menu from './Components/Menu'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import About from "./Pages/About";

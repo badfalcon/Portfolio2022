@@ -1,5 +1,4 @@
 import {matchPath, NavLink, useLocation} from "react-router-dom";
-import "./Menu.css"
 import {Box, Tab, Tabs} from "@mui/material";
 import Language from "./Language";
 
