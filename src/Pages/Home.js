@@ -1,14 +1,16 @@
 import {Box, Container, Typography} from "@mui/material";
-import {Trans} from "react-i18next";
+import {useTranslation} from "react-i18next";
 
 export const Home = () => {
+  const { t } = useTranslation();
+
   return <Container>
     <Box sx={{py:10}}>
       <Typography align='center' variant='h1' sx={{py:5}}>
-        <Trans i18nKey={"home.greetings"}>Hi there!</Trans>
+        {t('home.greetings')}
       </Typography>
       <Typography align='center' variant='h3'>
-        <Trans i18nKey={"home.desc"}>This is badfalcon`s personal website.</Trans>
+        {t('home.desc')}
       </Typography>
     </Box>
   </Container>

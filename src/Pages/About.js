@@ -1,11 +1,13 @@
-import {Trans} from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 import {Avatar, Box, Container, Grid, Typography} from "@mui/material";
 
 export const About = () => {
+  const { t } = useTranslation();
+
   return <Container>
     <Box sx={{pb:5}}>
       <Typography align='center' variant="h3">
-        <Trans i18nKey={"about.title"}>About</Trans>
+        {t('about.title')}
       </Typography>
     </Box>
     <Grid
@@ -25,42 +27,42 @@ export const About = () => {
       <Grid item xs={10} sm={8} md={6} >
         <Box>
           <Typography variant="subtitle1" textAlign="left" fontWeight="bold">
-            <Trans i18nKey={"about.head.name"}/>
+            {t('about.head.name')}
           </Typography>
           <Typography variant="body2" textAlign="right">
-            <Trans i18nKey={"about.body.name"}/>
+            {t('about.body.name')}
           </Typography>
         </Box>
         <Box>
           <Typography variant="subtitle1" textAlign="left" fontWeight="bold">
-            <Trans i18nKey={"about.head.nickname"}/>
+            {t('about.head.nickname')}
           </Typography>
           <Typography variant="body2" textAlign="right">
-            <Trans i18nKey={"about.body.nickname"}/>
+            {t('about.body.nickname')}
           </Typography>
         </Box>
         <Box>
           <Typography variant="subtitle1" textAlign="left" fontWeight="bold">
-            <Trans i18nKey={"about.head.born"}/>
+            {t('about.head.born')}
           </Typography>
           <Typography variant="body2" textAlign="right">
-            <Trans i18nKey={"about.body.born"}/>
+            {t('about.body.born')}
           </Typography>
         </Box>
         <Box>
           <Typography variant="subtitle1" textAlign="left" fontWeight="bold">
-            <Trans i18nKey={"about.head.upbringing"}/>
+            {t('about.head.upbringing')}
           </Typography>
           <Typography variant="body2" textAlign="right">
-            <Trans i18nKey={"about.body.upbringing"}/>
+            {t('about.body.upbringing')}
           </Typography>
         </Box>
         <Box>
           <Typography variant="subtitle1" textAlign="left" fontWeight="bold">
-            <Trans i18nKey={"about.head.hobby"}/>
+            {t('about.head.hobby')}
           </Typography>
           <Typography variant="body2" textAlign="right">
-            <Trans i18nKey={"about.body.hobby"}/>
+            {t('about.body.hobby')}
           </Typography>
         </Box>
       </Grid>
