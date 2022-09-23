@@ -28,6 +28,6 @@
     "label_address" : "Email",
     "label_name" : "Name",
     "label_message" : "Message",
-    "message_sent" : "送信が完了しました。"
+    "message_sent" : "Message Sent"
   }
 }
