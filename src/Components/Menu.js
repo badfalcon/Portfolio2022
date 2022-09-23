@@ -1,6 +1,7 @@
 import {matchPath, NavLink, useLocation} from "react-router-dom";
 import "./Menu.css"
-import {Tab, Tabs} from "@mui/material";
+import {Box, Tab, Tabs} from "@mui/material";
+import Language from "./Language";
 
 
 export const useRouteMatch = (patterns) => {
@@ -22,12 +23,19 @@ export const Menu = () => {
   const currentTab = routeMatch?.pattern?.path;
   return <header>
     <nav>
-      <Tabs value={currentTab} aria-label="nav tabs" centered>
-        <Tab label="Home" value="/" to={"/"} component={NavLink} />
-        <Tab label="About" value="/about"  to={"/about"} component={NavLink} />
-        <Tab label="Works" value="/works"  to={"/works"} component={NavLink} />
-        <Tab label="Contact" value="/contact"  to={"/contact"} component={NavLink} />
-      </Tabs>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ flexGrow: 1}}>
+          <Tabs value={currentTab} aria-label="nav tabs" centered>
+            <Tab label="Home" value="/" to={"/"} component={NavLink} />
+            <Tab label="About" value="/about"  to={"/about"} component={NavLink} />
+            <Tab label="Works" value="/works"  to={"/works"} component={NavLink} />
+            <Tab label="Contact" value="/contact"  to={"/contact"} component={NavLink} />
+          </Tabs>
+        </Box>
+        <Box>
+          <Language />
+        </Box>
+      </Box>
     </nav>
   </header>;
 }

@@ -6,7 +6,6 @@ import Home from "./Pages/Home";
 import Works from "./Pages/Works";
 import Contact from "./Pages/Contact";
 import Page404 from "./Pages/Page404";
-import Language from "./Components/Language";
 import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import {Container} from "@mui/material";
@@ -27,7 +26,6 @@ function App() {
             <Route path={"/contact"} element={<Contact/>}/>
             <Route path={"/*/"} element={<Page404/>}/>
           </Routes>
-          <Language/>
         </BrowserRouter>
       </Container>);
 }
