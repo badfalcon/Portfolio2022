@@ -17,11 +17,11 @@ function App() {
           <Menu/>
           <Box sx={{py:10}}>
             <Routes>
-              <Route path={"/"} element={<Home/>}/>
+              <Route index element={<Home/>}/>
               <Route path={"/about"} element={<About/>}/>
               <Route path={"/works"} element={<Works/>}/>
               <Route path={"/contact"} element={<Contact/>}/>
-              <Route path={"/*/"} element={<Page404/>}/>
+              <Route path={"/*"} element={<Page404/>}/>
             </Routes>
           </Box>
           <Footer/>

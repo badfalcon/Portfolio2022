@@ -19,7 +19,7 @@ export const useRouteMatch = (patterns) => {
 
 export const Menu = () => {
   const routeMatch = useRouteMatch(['/', '/about', '/works', '/contact']);
-  const currentTab = routeMatch?.pattern?.path;
+  const currentTab = routeMatch?.pattern?.path ?? false;
   return <header>
     <nav>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
