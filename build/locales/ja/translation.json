@@ -1,0 +1,33 @@
+{
+  "home": {
+    "greetings": "やぁ",
+    "desc": "ここはbadfalconの個人のサイトです。"
+  },
+  "about": {
+    "title": "自己紹介",
+    "head" : {
+      "name" :  "氏名",
+      "nickname" :  "ハンドルネーム",
+      "born" :  "生まれ",
+      "upbringing" :  "育ち",
+      "hobby" : "趣味"
+    },
+    "body" : {
+      "name" :  "増田 淳",
+      "nickname" :  "badfalcon",
+      "born" :  "静岡県",
+      "upbringing" :  "生まれは日本、アメリカ,マレーシアと海外で育つ。\n日本語と英語のバイリンガル。",
+      "hobby" : "ゲーム/謎解き/プログラミング"
+    }
+  },
+  "works": {
+    "title": "成果物"
+  },
+  "contact" : {
+    "title": "連絡先",
+    "label_address" : "メールアドレス",
+    "label_name" : "お名前",
+    "label_message" : "メッセージ",
+    "message_sent" : "送信が完了しました。"
+  }
+}
