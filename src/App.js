@@ -13,7 +13,7 @@ import "./App.css"
 function App() {
   return (
       <Container className="App" sx={{pb:10}}>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Menu/>
           <Box sx={{py:10}}>
             <Routes>
