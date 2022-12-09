@@ -1,5 +1,5 @@
 import Menu from './Components/Menu'
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {Routes, Route, HashRouter} from "react-router-dom";
 import About from "./Pages/About";
 import Home from "./Pages/Home";
 import Works from "./Pages/Works";
@@ -13,7 +13,7 @@ import "./App.css"
 function App() {
   return (
       <Container className="App" sx={{pb:10}}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter basename={process.env.PUBLIC_URL}>
           <Menu/>
           <Box sx={{py:10}}>
             <Routes>
@@ -25,7 +25,7 @@ function App() {
             </Routes>
           </Box>
           <Footer/>
-        </BrowserRouter>
+        </HashRouter>
       </Container>);
 }
 
