@@ -4,7 +4,7 @@ import {Avatar, Box, Container, Grid, Typography} from "@mui/material";
 export const About = () => {
   const { t } = useTranslation();
 
-  return <Container>
+  return <Container disableGutters>
     <Box sx={{pb:5}}>
       <Typography align='center' variant="h3">
         {t('about.title')}
@@ -16,13 +16,8 @@ export const About = () => {
         justifyContent="center"
         alignItems="center"
     >
-      <Grid item xs={12} sm={6} md={4} container
-            direction="column"
-            alignItems="center"
-      >
-        <Grid item xs={12} sm={12} md={12}>
-          <Avatar alt="Jun Masuda" src={`${process.env.PUBLIC_URL}/images/portfolio_1.jpg`} sx={{ width: 256, height: 256 }} />
-        </Grid>
+      <Grid item xs={12} sm={6} md={4}>
+        <Avatar alt="Jun Masuda" src={`${process.env.PUBLIC_URL}/images/portfolio_1.jpg`} sx={{ width: 256, height: 256, margin: 'auto' }} />
       </Grid>
       <Grid item xs={10} sm={8} md={6} >
         <Box>
