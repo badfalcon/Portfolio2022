@@ -15,7 +15,7 @@ function App() {
       <Container className="App" sx={{pb:10}}>
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Menu/>
-          <Box sx={{py:10}}>
+          <Box sx={{py:{xs:4,sm:10}}}>
             <Routes>
               <Route index element={<Home/>}/>
               <Route path={"/about"} element={<About/>}/>
