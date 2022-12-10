@@ -16,10 +16,10 @@ export const About = () => {
         justifyContent="center"
         alignItems="center"
     >
-      <Grid item xs={12} sm={6} md={4}>
+      <Grid item xs={12} sm={12} md={4}>
         <Avatar alt="Jun Masuda" src={`${process.env.PUBLIC_URL}/images/portfolio_1.jpg`} sx={{ width: 256, height: 256, margin: 'auto' }} />
       </Grid>
-      <Grid item xs={10} sm={8} md={6} >
+      <Grid item xs={11} sm={8} md={6} >
         <Box>
           <Typography variant="subtitle1" textAlign="left" fontWeight="bold">
             {t('about.head.name')}
