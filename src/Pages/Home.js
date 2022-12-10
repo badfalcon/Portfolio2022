@@ -6,10 +6,10 @@ export const Home = () => {
 
   return <Container>
     <Box sx={{py:10}}>
-      <Typography align='center' variant='h1' sx={{py:5}}>
+      <Typography align='center' variant='h2' sx={{py:{xs:0, sm:5}}}>
         {t('home.greetings')}
       </Typography>
-      <Typography align='center' variant='h3'>
+      <Typography align='center' variant='h4'>
         {t('home.desc')}
       </Typography>
     </Box>
