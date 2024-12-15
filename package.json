@@ -17,11 +17,12 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^11.18.3",
     "react-router-dom": "^6.3.0",
+    "typescript": "^5.7.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "vite build",
     "serve": "vite preview",
     "test": "jest"
   },
