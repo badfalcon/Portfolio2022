@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "jsx": "react"
+    // または "es2020", "es2022", "node16" など
+  }
+}

@@ -66,7 +66,7 @@ export const Works = () => {
                 <CardMedia
                     component="img"
                     height="140"
-                    image={v.src.replace("##PUBLIC##",`${process.env.PUBLIC_URL}`)}
+                    image={v.src.replace("##PUBLIC##/",`${import.meta.env.BASE_URL}`)}
                     alt={v.title}
                 />
                 <CardContent>
@@ -93,7 +93,7 @@ export const Works = () => {
             component="img"
             sx={{ flexGrow: 1, maxWidth: "100%", border: 1}}
             alt={ModalTitle}
-            src={ModalSrc.replace("##PUBLIC##",`${process.env.PUBLIC_URL}`)}
+            src={ModalSrc.replace("##PUBLIC##/",`${import.meta.env.BASE_URL}`)}
         />
         <Box component="div">
           <Typography id="modal-modal-title" variant="h6" component="h2">

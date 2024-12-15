@@ -31,7 +31,7 @@ export const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+    emailjs.sendForm(import.meta.env.REACT_APP_EMAILJS_SERVICE_ID, import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY)
     .then((result) => {
       console.log(result);
       if(result.status === 200){
