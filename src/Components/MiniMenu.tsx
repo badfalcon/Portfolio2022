@@ -30,7 +30,7 @@ export const MiniMenu = () => {
   const [loc, setLoc] = useState(currentTab);
   const [open, setOpen] = useState(false);
 
-  const handleChange = (event: SelectChangeEvent) => {
+  const handleChange = (event) => {
     let value = event.target.value;
     navigate(value);
     setLoc(value);
