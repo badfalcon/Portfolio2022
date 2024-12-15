@@ -23,7 +23,7 @@ export const useRouteMatch = (patterns) => {
 }
 
 export const MiniMenu = () => {
-  const routeMatch = useRouteMatch(['/', '/about', '/works', '/contact']);
+  const routeMatch = useRouteMatch(['/', '/about', '/works', '/contact', '/privacy']);
   const currentTab = routeMatch?.pattern?.path ?? false;
   const navigate = useNavigate();
 
@@ -60,6 +60,7 @@ export const MiniMenu = () => {
             <MenuItem value="/about">About</MenuItem>
             <MenuItem value="/works">Works</MenuItem>
             <MenuItem value="/contact">Contact</MenuItem>
+            <MenuItem value="/privacy">Privacy</MenuItem>
           </Select>
         </FormControl>
       </Box>

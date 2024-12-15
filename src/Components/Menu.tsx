@@ -19,7 +19,7 @@ export const useRouteMatch = (patterns) => {
 }
 
 export const Menu = () => {
-  const routeMatch = useRouteMatch(['/', '/about', '/works', '/contact']);
+  const routeMatch = useRouteMatch(['/', '/about', '/works', '/contact', '/privacy']);
   const currentTab = routeMatch?.pattern?.path ?? false;
   return <header>
     <Box sx={{ display: { xs:'none', sm: 'block'} }}>
@@ -31,6 +31,7 @@ export const Menu = () => {
               <Tab label="About" value="/about"  to={"/about"} component={NavLink} />
               <Tab label="Works" value="/works"  to={"/works"} component={NavLink} />
               <Tab label="Contact" value="/contact"  to={"/contact"} component={NavLink} />
+              <Tab label="Privacy" value="/privacy" to={"/privacy"} component={NavLink} />
             </Tabs>
           </Box>
           <Box>
