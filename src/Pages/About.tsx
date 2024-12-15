@@ -17,7 +17,7 @@ export const About = () => {
         alignItems="center"
     >
       <Grid item xs={12} sm={12} md={4}>
-        <Avatar alt="Jun Masuda" src={`/public/images/portfolio_1.jpg`} sx={{ width: 256, height: 256, margin: 'auto' }} />
+        <Avatar alt="Jun Masuda" src={`${process.env.PUBLIC_URL}/images/portfolio_1.jpg`} sx={{ width: 256, height: 256, margin: 'auto' }} />
       </Grid>
       <Grid item xs={11} sm={8} md={6} >
         <Box>
