@@ -3,8 +3,7 @@ import {Box, Tab, Tabs} from "@mui/material";
 import Language from "./Language";
 import MiniMenu from "./MiniMenu";
 
-
-export const useRouteMatch = (patterns) => {
+export const useRouteMatch = (patterns: string[]) => {
   const { pathname } = useLocation();
 
   for (let i = 0; i < patterns.length; i += 1) {

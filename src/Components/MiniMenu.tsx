@@ -1,14 +1,13 @@
 import {
   Box,
   FormControl, MenuItem,
-  Select,
-  SelectChangeEvent,
+  Select, SelectChangeEvent
 } from "@mui/material";
 import {matchPath, useLocation, useNavigate} from "react-router-dom";
 import Language from "./Language";
 import {useState} from "react";
 
-export const useRouteMatch = (patterns) => {
+export const useRouteMatch = (patterns: string[]) => {
   const {pathname} = useLocation();
 
   for (let i = 0; i < patterns.length; i += 1) {
@@ -24,13 +23,13 @@ export const useRouteMatch = (patterns) => {
 
 export const MiniMenu = () => {
   const routeMatch = useRouteMatch(['/', '/about', '/works', '/contact', '/privacy']);
-  const currentTab = routeMatch?.pattern?.path ?? false;
+  const currentTab = routeMatch?.pattern?.path ?? '';
   const navigate = useNavigate();
 
   const [loc, setLoc] = useState(currentTab);
   const [open, setOpen] = useState(false);
 
-  const handleChange = (event) => {
+  const handleChange = (event: SelectChangeEvent) => {
     let value = event.target.value;
     navigate(value);
     setLoc(value);

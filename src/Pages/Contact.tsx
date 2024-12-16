@@ -12,9 +12,9 @@ import {useTranslation} from "react-i18next";
 import SendIcon from '@mui/icons-material/Send';
 
 export const Contact = () => {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const { t } = useTranslation();
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [inputError, setInputError] = useState(false);
   const [mailSent, setMailSent] = useState(false);
 
@@ -28,19 +28,22 @@ export const Contact = () => {
       }
     }
   }
-  const sendEmail = (e) => {
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    emailjs.sendForm(import.meta.env.REACT_APP_EMAILJS_SERVICE_ID, import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY)
-    .then((result) => {
-      console.log(result);
-      if(result.status === 200){
-        setMailSent(true);
-      }
-    }, (error) => {
-      console.log(error);
-    });
-  };
+    if (form.current) {
+      emailjs.sendForm(import.meta.env.REACT_APP_EMAILJS_SERVICE_ID, import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+      .then((result) => {
+        console.log(result);
+        if(result.status === 200){
+          setMailSent(true);
+        }
+      }, (error) => {
+        console.log(error);
+      });
+    }
+  }
 
   return (
       <Container>

@@ -49,7 +49,7 @@ i18n
         },
         "privacy": {
           "title": "Privacy Policy",
-          "introduction": "This privacy policy explains the privacy practices for my Chrome extension and IDE plugin provided as an individual.",
+          "introduction": "This privacy policy explains the privacy practices for my Chrome extension and IDE plugin and so on provided as an individual.",
           "data_collection_title": "Data Collection",
           "data_collection": "This service does not collect personal information from users. Exceptionally, if minimal information is needed, explicit consent will be obtained beforehand.",
           "data_usage_title": "Data Usage",
@@ -100,7 +100,7 @@ i18n
         },
         "privacy": {
           "title": "プライバシーポリシー",
-          "introduction": "このプライバシーポリシーは、私が個人で公開しているChrome拡張およびIDEプラグインにおけるプライバシーに関する方針を説明しています。",
+          "introduction": "このプライバシーポリシーは、私が個人で公開しているChrome拡張およびIDEプラグインその他ツールにおけるプライバシーに関する方針を説明しています。",
           "data_collection_title": "情報の収集",
           "data_collection": "本サービスでは、ユーザーの個人情報を収集することはありません。本サービスの機能上最小限の情報が必要な場合は、事前に明示的な許可をいただきます。",
           "data_usage_title": "情報の使用",

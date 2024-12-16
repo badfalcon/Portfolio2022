@@ -25,17 +25,17 @@ const style = {
 };
 
 export const Works = () => {
-  const [ModalTitle, setModalTitle] = useState("");
-  const [ModalTags, setModalTags] = useState([]);
-  const [ModalSrc, setModalSrc] = useState("");
-  const [ModalURL, setModalURL] = useState("");
-  const [open, setOpen] = useState(false);
+  const [ModalTitle, setModalTitle] = useState<string>("");
+  const [ModalTags, setModalTags] = useState<string[]>([]);
+  const [ModalSrc, setModalSrc] = useState<string>("");
+  const [ModalURL, setModalURL] = useState<string>("");
+  const [open, setOpen] = useState<boolean>(false);
 
   const handleClose = () => {
     setOpen(false);
   }
 
-  const handleOpen = (index) => {
+  const handleOpen = (index: number) => {
     let targetWork = data["data"][index];
     setModalTitle(targetWork.title);
     setModalTags(targetWork.tags);
@@ -62,7 +62,7 @@ export const Works = () => {
           // todo review layout
           <Grid item xs={11} sm={8} md={6} key={v.key}>
             <Card>
-              <CardActionArea onClick={e => handleOpen(v.key)}>
+              <CardActionArea onClick={() => handleOpen(v.key)}>
                 <CardMedia
                     component="img"
                     height="140"
