@@ -7,7 +7,7 @@ import {
   Typography
 } from "@mui/material";
 import emailjs from "@emailjs/browser";
-import {useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
 import SendIcon from '@mui/icons-material/Send';
 
