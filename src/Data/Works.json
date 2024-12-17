@@ -16,10 +16,10 @@
     },
     {
       "key": 2,
-      "title": "SideTimeTable(under review)",
+      "title": "SideTimeTable",
       "tags": ["JavaScript","Chrome Extension","Google Calendar API"],
       "src": "##PUBLIC##/images/time_1.png",
-      "url": "https://chromewebstore.google.com/detail/pnknjjpncnciijkpdfgfiikmhlmamaid"
+      "url": "https://chromewebstore.google.com/detail/sidetimetable/pnknjjpncnciijkpdfgfiikmhlmamaid"
     },
     {
       "key": 3,
