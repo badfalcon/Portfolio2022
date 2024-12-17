@@ -48,7 +48,7 @@ export const Works = () => {
 
   return <Container>
     <Box sx={{pb:5}}>
-      <Typography align='center' variant="h3">
+      <Typography align='center' variant="h3" sx={{ fontWeight: 'bold' }}>
         {t('works.title')}
       </Typography>
     </Box>

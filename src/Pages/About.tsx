@@ -6,7 +6,7 @@ export const About = () => {
 
   return <Container disableGutters>
     <Box sx={{pb:5}}>
-      <Typography align='center' variant="h3">
+      <Typography align='center' variant="h3" sx={{ fontWeight: 'bold' }}>
         {t('about.title')}
       </Typography>
     </Box>
