@@ -16,15 +16,17 @@
     },
     {
       "key": 2,
-      "title": "SideTimeTable",
+      "title": "SideTimeTable(under review)",
       "tags": ["JavaScript","Chrome Extension","Google Calendar API"],
-      "src": "##PUBLIC##/images/time_1.png"
+      "src": "##PUBLIC##/images/time_1.png",
+      "url": "https://chromewebstore.google.com/detail/pnknjjpncnciijkpdfgfiikmhlmamaid"
     },
     {
       "key": 3,
-      "title": "ChatGPT Proofreading Plugin",
+      "title": "ChatGPT Proofreading Plugin(under review)",
       "tags": ["JavaScript","Chrome Extension","Open AI API"],
-      "src": "##PUBLIC##/images/proof_1.png"
+      "src": "##PUBLIC##/images/proof_1.png",
+      "url": "https://chromewebstore.google.com/detail/bfjjbkkeeclicefdebdpklogkggpoboo"
     },
     {
       "key": 4,
