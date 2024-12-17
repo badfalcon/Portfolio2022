@@ -40,7 +40,7 @@ export const Works = () => {
     setModalTitle(targetWork.title);
     setModalTags(targetWork.tags);
     setModalSrc(targetWork.src);
-    setModalURL(targetWork.url);
+    setModalURL(targetWork.url??"");
     setOpen(true);
   }
 
@@ -104,7 +104,7 @@ export const Works = () => {
                 <Chip label={v} sx={{ my: 2, mx:0.2}} key={v}/>
             ))}
           </Box>
-          <Button variant="contained" target="_blank" href={ModalURL} rel="noopener" startIcon={<OpenInNew />}>
+          <Button variant="contained" target="_blank" href={ModalURL} rel="noopener" startIcon={<OpenInNew />} disabled={!ModalURL}>
             Link
           </Button>
         </Box>

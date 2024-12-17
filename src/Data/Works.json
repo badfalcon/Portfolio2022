@@ -9,34 +9,53 @@
     },
     {
       "key": 1,
+      "title": "Backlog PR Viewer",
+      "tags": ["Kotlin","Plugin","Jetbrains","Backlog"],
+      "src": "##PUBLIC##/images/backlog.png",
+      "url": "https://plugins.jetbrains.com/plugin/25137-backlog"
+    },
+    {
+      "key": 2,
+      "title": "SideTimeTable",
+      "tags": ["JavaScript","Chrome Extension","Google Calendar API"],
+      "src": "##PUBLIC##/images/time_1.png"
+    },
+    {
+      "key": 3,
+      "title": "ChatGPT Proofreading Plugin",
+      "tags": ["JavaScript","Chrome Extension","Open AI API"],
+      "src": "##PUBLIC##/images/proof_1.png"
+    },
+    {
+      "key": 4,
       "title": "Skin Editor(Web)",
       "tags": ["JavaScript","Website","Minecraft"],
       "src": "##PUBLIC##/images/web_skin_editor.png",
       "url": "https://legacy.badfalcon.net/others/skineditor/index.html"
     },
     {
-      "key": 2,
+      "key": 5,
       "title": "Skin Poser",
       "tags": ["JavaScript","Website","Minecraft"],
       "src": "##PUBLIC##/images/skin_poser.png",
       "url": "https://legacy.badfalcon.net/others/skinposer/index.html"
     },
     {
-      "key": 3,
+      "key": 6,
       "title": "ImageDrawer",
       "tags": ["JavaScript","Chrome Ext"],
       "src": "##PUBLIC##/images/image_drawer.jpg",
       "url": "https://chrome.google.com/webstore/detail/imagedrawer/bbncpjkeogjmdbapnhbllmclomkdckjl?hl=ja"
     },
     {
-      "key": 4,
+      "key": 7,
       "title": "Old Personal Website",
       "tags": ["JavaScript","Website"],
       "src": "##PUBLIC##/images/old_website.png",
       "url": "https://legacy.badfalcon.net/"
     },
     {
-      "key": 5,
+      "key": 8,
       "title": "Portfolio Website",
       "tags": ["React","JavaScript","Website"],
       "src": "##PUBLIC##/images/portfolio_website.png",
