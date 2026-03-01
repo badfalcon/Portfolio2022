@@ -62,6 +62,13 @@
       "tags": ["React","JavaScript","Website"],
       "src": "##PUBLIC##/images/portfolio_website.png",
       "url": "https://www.badfalcon.net"
+    },
+    {
+      "key": 9,
+      "title": "Git Souji",
+      "tags": ["TypeScript","VSCode Extension","Git"],
+      "src": "https://opengraph.githubassets.com/1/badfalcon/gitbranchmanager",
+      "url": "https://marketplace.visualstudio.com/items?itemName=badfalcon.gitsouji"
     }
   ]
 }
