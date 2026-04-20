@@ -9,12 +9,14 @@ import Page404 from "./Pages/Page404";
 import { Suspense } from 'react';
 import {Box, Container} from "@mui/material";
 import Footer from "./Components/Footer";
+import Canonical from "./Components/Canonical";
 import "./App.css"
 
 function App() {
   return (
       <Container className="App" sx={{pb:10}}>
         <BrowserRouter>
+          <Canonical/>
           <Menu/>
           <Box sx={{py:{xs:4,sm:10}}}>
             <Routes>
