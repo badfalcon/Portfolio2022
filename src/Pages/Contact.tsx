@@ -33,14 +33,13 @@ export const Contact = () => {
     e.preventDefault();
 
     if (form.current) {
-      emailjs.sendForm(import.meta.env.REACT_APP_EMAILJS_SERVICE_ID, import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+      emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
       .then((result) => {
-        console.log(result);
         if(result.status === 200){
           setMailSent(true);
         }
       }, (error) => {
-        console.log(error);
+        if (import.meta.env.DEV) console.error(error);
       });
     }
   }

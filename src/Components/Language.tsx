@@ -12,18 +12,15 @@ export const Language = () => {
   const [open, setOpen] = useState(false);
 
   const handleChange = (event: SelectChangeEvent) => {
-    console.log("handle change");
     let value = event.target.value;
     i18n.changeLanguage(value).then(() => setLang(value));
   }
 
   const handleClose = () => {
-    console.log("handleClose");
     setOpen(false);
   }
 
   const handleOpen = () => {
-    console.log("handleOpen");
     setOpen(true);
   }
   return <Box sx={{display: 'inline-flex', alignItems: 'center'}}>
