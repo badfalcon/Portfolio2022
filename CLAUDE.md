@@ -166,6 +166,7 @@ Vite inlines these values into the JavaScript bundle at build time, so they are 
 - `public/_headers` sets HSTS, X-Frame-Options, Permissions-Policy and a Content-Security-Policy for every path.
 - When adding an external resource (image host, script, API), add its origin to the matching CSP directive (`img-src`, `script-src`, `connect-src`), then check the browser console on the preview deployment for CSP violations.
 - `style-src 'unsafe-inline'` is required because MUI/Emotion injects `<style>` tags at runtime.
+- HSTS uses `includeSubDomains`, so every subdomain of badfalcon.net must serve HTTPS. As of October 2026 the only web hosts are the apex, `www` and `legacy`, all proxied by Cloudflare. When adding a subdomain, keep it proxied (or give it a valid certificate); an HTTP-only subdomain would be unreachable in browsers that have visited badfalcon.net. `preload` is intentionally not set because removal from browser preload lists takes months.
 
 ---
 
