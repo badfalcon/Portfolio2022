@@ -6,10 +6,13 @@ import {
   TextField,
   Typography
 } from "@mui/material";
-import emailjs from "@emailjs/browser";
+import emailjs, {type EmailJSResponseStatus} from "@emailjs/browser";
 import React, {useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
 import SendIcon from '@mui/icons-material/Send';
+
+// Minimum interval between send attempts from the same browser (ms).
+const SEND_THROTTLE_MS = 30000;
 
 export const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -17,6 +20,8 @@ export const Contact = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputError, setInputError] = useState(false);
   const [mailSent, setMailSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
   const checkAddress = () => {
     if (inputRef.current) {
@@ -33,14 +38,24 @@ export const Contact = () => {
     e.preventDefault();
 
     if (form.current) {
-      emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+      setSending(true);
+      setSendError(null);
+      emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        // Reject automated (headless) browsers before anything is sent.
+        blockHeadless: true,
+        // Allow one send attempt per SEND_THROTTLE_MS per browser.
+        limitRate: {id: 'contact', throttle: SEND_THROTTLE_MS},
+      })
       .then((result) => {
         if(result.status === 200){
           setMailSent(true);
         }
-      }, (error) => {
+      }, (error: EmailJSResponseStatus) => {
         if (import.meta.env.DEV) console.error(error);
-      });
+        setSendError(error?.status === 429 ? 'contact.message_rate_limited' : 'contact.message_error');
+      })
+      .finally(() => setSending(false));
     }
   }
 
@@ -64,8 +79,13 @@ export const Contact = () => {
                 <TextField name={"message"} required
                            label={t('contact.label_message')} multiline
                            rows={4}/>
+                {sendError &&
+                    <Typography color="error" role="alert">
+                      {t(sendError)}
+                    </Typography>
+                }
                 <Button variant="contained" endIcon={<SendIcon/>}
-                        type={"submit"}>
+                        type={"submit"} disabled={sending}>
                   Send
                 </Button>
               </Stack>
