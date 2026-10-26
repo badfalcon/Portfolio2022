@@ -16,12 +16,14 @@ The site is bilingual (English/Japanese), mobile-responsive, and features a cont
 |---|---|
 | Framework | React 18.2.0 |
 | Language | TypeScript 5.7.2 |
-| Build tool | Vite 6.0.3 |
+| Build tool | Vite 6 |
+| Runtime (build) | Node.js 22.23.4, pinned via `.node-version` |
 | UI library | Material-UI (MUI) 5 + Emotion |
 | Routing | react-router-dom 6 |
 | i18n | i18next 21 + react-i18next |
-| Email | @emailjs/browser 3 |
-| Testing | Jest + @testing-library/react |
+| Email | @emailjs/browser 4 |
+| Hosting | Cloudflare Pages (build system v3) |
+| Testing | Jest + @testing-library/react (Jest is not installed yet — see Testing) |
 
 ---
 
@@ -51,11 +53,12 @@ Portfolio2022/
 │   └── App.css           # App-level styles (white-space: pre-line)
 ├── public/               # Static assets served as-is
 │   ├── images/           # Project screenshots (referenced in Works.json)
-│   ├── _redirects        # Netlify SPA redirect rule
+│   ├── _headers          # Security headers incl. CSP (read by Cloudflare Pages)
 │   ├── sitemap.xml
 │   └── manifest.json
 ├── vite.config.ts        # Vite: dev port 3000, build output → build/
 ├── tsconfig.json         # Strict TypeScript, target ES2022
+├── .node-version         # Node.js version for Cloudflare Pages builds
 ├── .env.sample           # Required environment variables template
 └── package.json
 ```
@@ -104,7 +107,9 @@ VITE_EMAILJS_TEMPLATE_ID=
 VITE_EMAILJS_PUBLIC_KEY=
 ```
 
-All Vite env vars must be prefixed with `VITE_` and accessed via `import.meta.env.VITE_*`.
+All Vite env vars must be prefixed with `VITE_` and accessed via `import.meta.env.VITE_*`. Variables without the prefix (e.g. the old `REACT_APP_*` names) are silently `undefined`.
+
+Vite inlines these values into the JavaScript bundle at build time, so they are public (EmailJS is designed for this). For deployed builds they come from the Cloudflare Pages project's environment variables, set for both Production and Preview; after changing them, trigger a new build for the change to take effect.
 
 ---
 
@@ -146,16 +151,32 @@ All Vite env vars must be prefixed with `VITE_` and accessed via `import.meta.en
 
 - Uses `react-router-dom` v6 (`<Routes>` / `<Route>` API).
 - All navigation should use `<Link>` or `useNavigate` — never raw `<a href>` for internal links.
-- The `public/_redirects` file handles Netlify SPA fallback (`/* /index.html 200`).
+- Deep links such as `/works` work because Cloudflare Pages treats a project without a top-level `404.html` as a single-page app and serves `index.html` for any path. **Do not add `public/404.html`** — it disables this fallback and direct visits to routes would return 404. Unknown paths are handled by `Page404.tsx` instead.
+- No `_redirects` file is needed. Cloudflare Pages ignores `/* /index.html 200` as an infinite loop.
+
+### Contact Form (EmailJS)
+
+- `Contact.tsx` calls `emailjs.sendForm` with SDK options: `blockHeadless: true` rejects automated browsers, and `limitRate` (`id: 'contact'`, 30 s) allows one attempt per browser, recorded in `localStorage` under `contact`.
+- The throttle starts at the attempt, so failures are shown to the user: status 429 → `contact.message_rate_limited`, anything else → `contact.message_error`.
+- The account is on EmailJS's free plan, so the dashboard's domain allowlist is not available; these client-side measures are the abuse protection. Keep "Allow EmailJS API for non-browser applications" off.
+- A 412 response with `Gmail_API: Invalid grant` means the Gmail connection in EmailJS expired; reconnect it under Email Services (no rebuild needed).
+
+### Security Headers
+
+- `public/_headers` sets HSTS, X-Frame-Options, Permissions-Policy and a Content-Security-Policy for every path.
+- When adding an external resource (image host, script, API), add its origin to the matching CSP directive (`img-src`, `script-src`, `connect-src`), then check the browser console on the preview deployment for CSP violations.
+- `style-src 'unsafe-inline'` is required because MUI/Emotion injects `<style>` tags at runtime.
 
 ---
 
 ## Deployment
 
-- **Platform:** Netlify
+- **Platform:** Cloudflare Pages, project `website-2022`, connected to this GitHub repository
+- **Build system:** v3, with Node.js pinned by `.node-version`
 - **Build command:** `npm run build`
 - **Publish directory:** `build/`
-- The `public/_redirects` file must remain in place for client-side routing to work.
+- Pushes to `master` deploy to production automatically. Preview deployments are built only for branches matching `claude/*` (Settings → Builds & deployments → Branch control), and each one gets a `*.website-2022-apb.pages.dev` URL that is posted as a check on the pull request.
+- To roll back, open Deployments and choose "Rollback to this deployment" on an earlier production deployment.
 - Update `public/sitemap.xml` manually when adding new routes or significant content.
 
 ---
@@ -165,6 +186,7 @@ All Vite env vars must be prefixed with `VITE_` and accessed via `import.meta.en
 - Branch naming follows the pattern `claude/<feature-description>-<id>` for AI-assisted work.
 - Commit messages use conventional commit style: `feat:`, `fix:`, `style:`, `remove:`, `chore:`.
 - The main production branch is `master`.
+- Keep LF line endings. The repository is often checked out on Windows; do not commit files with CRLF (`package-lock.json` was once committed with CRLF by mistake).
 
 ---
 
@@ -188,7 +210,5 @@ All Vite env vars must be prefixed with `VITE_` and accessed via `import.meta.en
 
 ## Testing
 
-- Test files live alongside source files (e.g., `src/App.test.js`).
-- Uses Jest + React Testing Library.
-- Run all tests: `npm test`.
-- Test setup is in `src/setupTests.tsx`.
+- Test files live alongside source files (e.g., `src/App.test.js`), with setup in `src/setupTests.tsx`.
+- `npm test` runs `jest`, but Jest itself is not a dependency yet, so the command currently fails with `jest: not found`. Until a test runner is set up, verify changes with `npx tsc --noEmit`, `npm run build` and the preview deployment.
