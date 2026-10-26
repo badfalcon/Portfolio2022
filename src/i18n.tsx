@@ -45,7 +45,9 @@ i18n
           "label_address" : "Email",
           "label_name" : "Name",
           "label_message" : "Message",
-          "message_sent" : "Message Sent"
+          "message_sent" : "Message Sent",
+          "message_error" : "Your message could not be sent. Please try again later.",
+          "message_rate_limited" : "Please wait a moment before sending again."
         },
         "privacy": {
           "title": "Privacy Policy",
@@ -96,7 +98,9 @@ i18n
           "label_address" : "メールアドレス",
           "label_name" : "お名前",
           "label_message" : "メッセージ",
-          "message_sent" : "送信が完了しました。"
+          "message_sent" : "送信が完了しました。",
+          "message_error" : "送信できませんでした。時間をおいて再度お試しください。",
+          "message_rate_limited" : "続けて送信することはできません。しばらく待ってから再度お試しください。"
         },
         "privacy": {
           "title": "プライバシーポリシー",
