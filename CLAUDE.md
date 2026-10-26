@@ -19,7 +19,7 @@ The site is bilingual (English/Japanese), mobile-responsive, and features a cont
 | Build tool | Vite 6 |
 | Runtime (build) | Node.js 22.23.4, pinned via `.node-version` |
 | UI library | Material-UI (MUI) 5 + Emotion |
-| Routing | react-router-dom 6 |
+| Routing | react-router-dom 7 (used in declarative mode) |
 | i18n | i18next 21 + react-i18next |
 | Email | @emailjs/browser 4 |
 | Hosting | Cloudflare Pages (build system v3) |
@@ -149,7 +149,7 @@ Vite inlines these values into the JavaScript bundle at build time, so they are 
 
 ### Routing
 
-- Uses `react-router-dom` v6 (`<Routes>` / `<Route>` API).
+- Uses `react-router-dom` v7 in declarative mode (`<BrowserRouter>` / `<Routes>` / `<Route>`); no data router or framework mode. Keep imports from `react-router-dom`.
 - All navigation should use `<Link>` or `useNavigate` — never raw `<a href>` for internal links.
 - Deep links such as `/works` work because Cloudflare Pages treats a project without a top-level `404.html` as a single-page app and serves `index.html` for any path. **Do not add `public/404.html`** — it disables this fallback and direct visits to routes would return 404. Unknown paths are handled by `Page404.tsx` instead.
 - No `_redirects` file is needed. Cloudflare Pages ignores `/* /index.html 200` as an infinite loop.
