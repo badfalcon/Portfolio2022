@@ -67,7 +67,7 @@
       "key": 9,
       "title": "Git Souji",
       "tags": ["TypeScript","VSCode Extension","Git"],
-      "src": "https://opengraph.githubassets.com/1/badfalcon/gitbranchmanager",
+      "src": "##PUBLIC##/images/git_souji.png",
       "url": "https://marketplace.visualstudio.com/items?itemName=badfalcon.gitsouji"
     }
   ]
