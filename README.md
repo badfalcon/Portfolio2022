@@ -13,7 +13,7 @@
 - Node.js
 - React
 - MUI
-- GitHub Pages
+- Cloudflare Pages
 
 ## インストール手順
 
